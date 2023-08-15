@@ -1,12 +1,9 @@
-object Main {
-  def main(args: Array[String]): Unit = {
+object Q1 extends App{
+    val calculateInterest: Double => Double = depositAmount =>
+        if (depositAmount <= 20000) 0.02 * depositAmount
+        else if (depositAmount <= 200000) 0.04 * depositAmount
+        else if (depositAmount <= 2000000) 0.035 * depositAmount
+        else 0.065 * depositAmount
 
-
-    val numbers = filterEvenNumbers(Array(1, 2, 3, 4, 5, 6, 7, 8, 9, 10));
-    println(numbers.mkString(", "));
-  }
-
-  def filterEvenNumbers(arr: Array[Int]): Array[Int] = {
-    arr.filter(arr => arr % 2 == 0);
-  }
+    println(calculateInterest(25000))
 }
