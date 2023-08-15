@@ -1,11 +1,12 @@
-import Array._
 object Q2 extends App{
-  def calculateSquare(arr: Array[Int]): Array[Int] = {
-    arr.map(arr => arr * arr);
-  }
+    print("Enter an integer: ")
+    val input = scala.io.StdIn.readInt()
+    
+    val message = input match {
+      case x if x <= 0 => "Negative/Zero is input"
+      case x if x % 2 == 0 => "Even number is given"
+      case x => "Odd number is given"
+    }
 
-  val numbers = calculateSquare(Array(1, 2, 3, 4, 5));
-  println(numbers.mkString(", "));
-
-
+    println(message)
 }
